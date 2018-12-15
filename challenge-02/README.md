@@ -43,6 +43,10 @@ function produto_mais_dois(a,b,c){
   }
 }
 
+Nota: 
+1)Pode fazer a === undefined || b === undefined || c===undefined
+2)Pode fazer sem o else , uma vez que o return força a saída da função.
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
 produto_mais_dois(1,2)
@@ -79,6 +83,20 @@ function retorno_condicional(a,b,c){
   }
 }
 
+Outra forma de resolver:
+function retorno_condicional(a,b,c){
+  if (a !== undefined && b === undefined &&  c=== undefined) {
+    return a;
+  }else if(a!== undefined && b !== undefined && c === undefined) {
+    return a+b;
+  }else if(a!== undefined && b !== undefined && c !== undefined) {
+    return (a + b)/c;
+  }else if (a === undefined && b === undefined && c === undefined)){
+    return false;
+  }else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 retorno_condicional() // false
