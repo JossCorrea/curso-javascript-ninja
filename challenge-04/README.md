@@ -10,7 +10,10 @@ para o contrário.
   var isTruthy = function(a){
     return !!a ? true:false
   }
-
+ 
+ outro  jeito:
+  var isTruthy = function(a){return !!a}
+  
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
   isTruthy(undefined);
   isTruthy(false);
@@ -93,7 +96,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-  return 'Esse carro é um '+ carro.marca +' '+ carro.modelo 
+  return 'Esse carro é um '+ carro.obterMarca() +' '+ carro.obterModelo() 
 }
 
 /*
@@ -130,6 +133,24 @@ carro.adicionarPessoas = function(num_pessoas){
   }
 }
 
+Outra forma:
+carro.adicionarPessoas = function(numPessoas){
+  var totalPessoas = carro.quantidadePessoas + numPessoas
+  
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+    return 'O carro já está lotado!' 
+  }
+  
+  if (totalPessoas > carro.assentos){
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    return 'Só cabem mais ' + quantasPessoasCabem +' '+ (carro.quantidadePessoas === 1  ? 'pessoa':'pessoas')+ '!'
+  }
+  
+   carro.quantidadePEssoas =+ numPessoas
+    return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro!'
+
+  }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
