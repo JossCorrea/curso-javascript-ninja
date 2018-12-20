@@ -57,9 +57,11 @@ repetição "while".
 */
 var numero = 20
 while(numero <=30){
-  console.log(numero)
+  console.log(numero) //outra forma: console.log(numero++)
   numero++
 }
+ 
+
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
